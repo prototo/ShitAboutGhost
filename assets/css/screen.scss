@@ -1,0 +1,173 @@
+// compileOnSave
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,200,600);
+@import "palette";
+
+$blog-width: 720px;
+
+$banner-height: 20em;
+$h1: 4em;
+$post-header-height: 10em;
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    color: $black;
+    font-size: 16px;
+    background: $white;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: $black;
+}
+
+div.container {
+    max-width: $blog-width;
+    margin: auto;
+}
+
+body > header#vanity {
+    text-align: left;
+    background: $black;
+    position: fixed;
+    top: -4em;
+    left: 0;
+    right: 0;
+    height: 4em;
+    transition: top .25s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 1em;
+
+    &.fixed {
+        top: 0;
+    }
+
+    a, a:visited {
+        color: $white;
+    }
+
+    h1 {
+        font-size: $h1 - 2em;
+        margin: 0;
+    }
+}
+
+body > header#banner {
+    height: $banner-height;
+    background-size: cover;
+    background-position: 100% center;
+    margin-bottom: 2em;
+
+    div.wrapper {
+        background-color: rgba(0, 0, 0, 0.25);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        color: $white;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 2em;
+    }
+
+    h1, h2 {
+        margin: 0;
+    }
+
+    h2 {
+        font-weight: 200;
+    }
+
+    a, a:visited {
+        color: $white;
+    }
+}
+
+h1 {
+    font-size: $h1;
+}
+h2 {
+    font-size: $h1 - 1em;
+}
+
+article header {
+    padding: 1em 1em 0 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    &.has_image {
+        color: $white;
+        height: $post-header-height;
+        background-size: cover;
+        background-position: center 30%;
+        padding: 1em;
+
+        a, a:visited {
+            color: $white;
+        }
+    }
+
+    h2 {
+        margin: 0;
+    }
+}
+
+summary {
+    margin: 0 1em;
+    line-height: 1.75em;
+}
+
+footer {
+    border-top: 1px solid $grey;
+    margin: 0 1em;
+    padding: 1em 0;
+
+    p {
+        margin: 0;
+        padding: 0;
+        // font-weight: 200;
+        font-size: 0.75em;
+    }
+}
+
+article {
+    background: $white;
+    margin: 0 0 3em 0;
+}
+
+@media screen and (max-width: $blog-width) {
+    body > header#banner {
+        height: 100%;
+    }
+
+    h1 {
+        font-size: $h1 - 1em;
+    }
+    h2 {
+        font-size: $h1 - 2em;
+    }
+
+    article {
+        margin: 2em;
+
+        summary, footer {
+            margin: 0;
+            text-align: justify;
+        }
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

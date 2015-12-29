@@ -1,0 +1,19 @@
+<header id="vanity">
+    <h1 class="site-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+</header>
+
+{{#is "post"}}
+    <header style="background-image: url({{post.image}}" id="banner">
+        <div class="wrapper">
+            <h2 class="site-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h2>
+            <h1><a href="{{post.url}}">{{post.title}}</a></h1>
+        </div>
+    </header>
+{{else}}
+    <header style="background-image: url({{@blog.cover}})" id="banner">
+        <div class="wrapper">
+            <h1 class="site-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+            <h2>{{@blog.description}}</h2>
+        </div>
+    </header>
+{{/is}}
